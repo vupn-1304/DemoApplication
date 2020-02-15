@@ -14,7 +14,6 @@ class RegisterFragment : BaseFragment() {
     companion object {
         const val USER = "USER"
     }
-
     private val gson by inject<Gson>()
     private val user by lazy { User() }
 
