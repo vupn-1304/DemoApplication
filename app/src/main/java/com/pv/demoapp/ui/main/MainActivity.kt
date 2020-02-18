@@ -3,11 +3,11 @@ package com.pv.demoapp.ui.main
 import android.os.Bundle
 import android.os.Handler
 import com.base.BaseActivity
-import com.event.EventNextFragment
 import com.pv.demoapp.BR
 import com.pv.demoapp.R
 import com.pv.demoapp.databinding.ActivityMainBinding
 import com.pv.demoapp.ui.register.RegisterFragment
+import com.pv.demoapp.utils.event.EventNextMain
 import com.pv.demoapp.utils.register
 import com.pv.demoapp.utils.unregister
 import org.greenrobot.eventbus.Subscribe
@@ -25,7 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
 
     override fun updateUI(savedInstanceState: Bundle?) {
         mainViewModel.setNavigator(this)
-        openFragment(R.id.container_main, RegisterFragment::class.java, null, false)
+        openFragment(R.id.container_main, RegisterFragment::class.java, null, true)
     }
 
     override fun onStart() {
@@ -39,9 +39,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNav
     }
 
     @Subscribe
-    fun onEventNextMain(nextFragment: EventNextFragment) {
+    fun onEventNextFragment(eventNextMain: EventNextMain) {
         Handler().post {
-            openFragment(R.id.container_main, nextFragment.clazz, nextFragment.bundle, nextFragment.isAddToBackStack)
+            openFragment(R.id.container_main, eventNextMain.clazz, eventNextMain.bundle, eventNextMain.isAddToBackStack)
         }
     }
 

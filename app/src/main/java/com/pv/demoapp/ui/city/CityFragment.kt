@@ -8,6 +8,7 @@ import com.pv.demoapp.databinding.FragmentCityBinding
 import com.pv.demoapp.ui.city.adapter.CityAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 
+
 class CityFragment : BaseFragment<FragmentCityBinding, CityViewModel>(), CityNavigator {
 
     private val cityViewModel by viewModel<CityViewModel>()

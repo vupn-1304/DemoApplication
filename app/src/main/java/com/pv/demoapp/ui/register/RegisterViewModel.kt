@@ -8,4 +8,6 @@ class RegisterViewModel(
         dataManager: DataManager,
         schedulerProvider: SchedulerProvider
 ) : BaseViewModel<RegisterNavigator>(dataManager, schedulerProvider) {
+
+    fun next() = getNavigator().next()
 }

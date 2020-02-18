@@ -2,13 +2,13 @@ package com.pv.demoapp.ui.register
 
 import android.os.Bundle
 import com.base.BaseFragment
-import com.event.EventNextFragment
 import com.google.gson.Gson
 import com.pv.demoapp.BR
 import com.pv.demoapp.R
 import com.pv.demoapp.data.model.User
 import com.pv.demoapp.databinding.FragmentRegisterBinding
 import com.pv.demoapp.ui.city.CityFragment
+import com.pv.demoapp.utils.event.EventNextMain
 import com.pv.demoapp.utils.postNormal
 import kotlinx.android.synthetic.main.fragment_register.*
 import org.koin.android.ext.android.inject
@@ -32,9 +32,10 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel
 
     override fun updateUI(savedInstanceState: Bundle?) {
         registerViewModel.setNavigator(this)
-        btnNext.setOnClickListener {
-            checkErr()
-        }
+    }
+
+    override fun next() {
+        checkErr()
     }
 
     private fun checkErr() {
@@ -74,7 +75,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding, RegisterViewModel
             val bundle = Bundle().apply {
                 putString(USER, gson.toJson(user))
             }
-            postNormal(EventNextFragment(CityFragment::class.java, bundle, true))
+            postNormal(EventNextMain(CityFragment::class.java, bundle, true))
         }
     }
 }
