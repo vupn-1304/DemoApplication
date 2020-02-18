@@ -9,8 +9,10 @@ import com.pv.demoapp.R
 import com.pv.demoapp.data.model.City
 import com.pv.demoapp.databinding.FragmentCityBinding
 import com.pv.demoapp.ui.city.adapter.CityAdapter
+import com.pv.demoapp.ui.interview.InterviewFragment
+import com.pv.demoapp.utils.event.EventNextMain
+import com.pv.demoapp.utils.postNormal
 import org.koin.android.viewmodel.ext.android.viewModel
-
 
 class CityFragment : BaseFragment<FragmentCityBinding, CityViewModel>(), CityNavigator {
 
@@ -31,6 +33,7 @@ class CityFragment : BaseFragment<FragmentCityBinding, CityViewModel>(), CityNav
         cityAdapter.onItemClick = object : OnItemClick {
             override fun onItemClickListener(view: View, position: Int) {
                 toast(cityAdapter.listCity[position].name)
+                postNormal(EventNextMain(InterviewFragment::class.java))
             }
         }
     }

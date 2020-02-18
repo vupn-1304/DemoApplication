@@ -1,8 +1,8 @@
 package com.pv.demoapp.data.remote
 
+import com.google.gson.JsonObject
 import com.pv.demoapp.data.remote.ApiEndPoint.CITY_URL
 import com.pv.demoapp.data.remote.ApiEndPoint.DISTRICT_URL
-import com.google.gson.JsonObject
 import com.rx2androidnetworking.Rx2AndroidNetworking
 import io.reactivex.Single
 

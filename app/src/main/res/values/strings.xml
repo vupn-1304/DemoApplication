@@ -26,4 +26,6 @@
 
   <string name="session_expired">The session has expired, please login again</string>
   <string name="no_internet_connection">No internet connection</string>
+
+  <string name="backgroud_service_download_image">Backgroud Service (Download Music)</string>
 </resources>
