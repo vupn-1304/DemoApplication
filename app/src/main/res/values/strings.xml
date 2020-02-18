@@ -28,4 +28,5 @@
   <string name="no_internet_connection">No internet connection</string>
 
   <string name="backgroud_service_download_image">Backgroud Service (Download Music)</string>
+  <string name="str_service">Có 3 loại Service :</string>
 </resources>

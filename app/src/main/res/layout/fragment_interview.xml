@@ -8,23 +8,37 @@
         type="com.pv.demoapp.ui.interview.InterviewViewModel" />
   </data>
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:background="@color/clr_white"
-      android:clickable="true"
-      android:focusable="true"
-      android:gravity="center"
-      android:orientation="vertical">
+  <androidx.core.widget.NestedScrollView
 
-    <TextView
-        android:id="@+id/tvBgService"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_button_next"
-        android:onClick="@{() -> interviewModel.backgroudService()}"
-        android:padding="@dimen/_16dp"
-        android:text="@string/backgroud_service_download_image"
-        android:textColor="@color/clr_white" />
-  </LinearLayout>
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/clr_white"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/_32dp"
+          android:text="@string/str_service" />
+
+      <TextView
+          android:id="@+id/tvBgService"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/_32dp"
+          android:background="@drawable/bg_button_next"
+          android:onClick="@{() -> interviewModel.backgroudService()}"
+          android:padding="@dimen/_16dp"
+          android:text="@string/backgroud_service_download_image"
+          android:textColor="@color/clr_white" />
+    </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+
 </layout>
