@@ -10,7 +10,7 @@ import org.koin.dsl.module
 val viewModule: Module = module {
 
     viewModel { MainViewModel(get(),get()) }
-    viewModel { CityViewModel(get(), get()) }
+    viewModel { CityViewModel(get(), get(), get()) }
     viewModel { RegisterViewModel(get(), get()) }
 
 }
